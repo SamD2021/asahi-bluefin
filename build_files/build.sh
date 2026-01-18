@@ -21,6 +21,7 @@ dnf5 install -y \
 	tmux \
 	just \
 	ghostty \
+	asahi-nvram \
 	@cosmic-desktop-environment
 
 dnf5 clean all
