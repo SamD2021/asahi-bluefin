@@ -12,6 +12,16 @@ cp -avf "/tmp/ctx/files"/. /
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 dnf5 -y copr enable scottames/ghostty
+ 
+rpm --import https://repo.cider.sh/RPM-GPG-KEY &&
+  cat >/etc/yum.repos.d/cider.repo <<'EOF'
+[cidercollective]
+name=Cider Collective Repository
+baseurl=https://repo.cider.sh/rpm/RPMS
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.cider.sh/RPM-GPG-KEY
+EOF
 
 dnf5 remove -y \
 	imsettings \
@@ -29,6 +39,7 @@ dnf5 install -y \
 	asahi-nvram \
 	zsh \
 	gcc \
+	Cider \
 	@cosmic-desktop-environment
 
 
