@@ -71,7 +71,8 @@ dnf5 install -y \
   gnome-shell-extension-pop-shell \
   pam-u2f \
   pamu2fcfg \
-  libfido2
+  libfido2 \
+  qemu
 
 #	@cosmic-desktop-environment
 
