@@ -12,6 +12,12 @@ if [ -d /usr/share/gnome-shell/extensions/tmp/caffeine/caffeine@patapon.info ]; 
   mv /usr/share/gnome-shell/extensions/tmp/caffeine/caffeine@patapon.info /usr/share/gnome-shell/extensions/caffeine@patapon.info
 fi
 
+# Blur-my-shell extension setup
+# the extension.js file must be moved to the standard extensions directory for GNOME Shell to detect it.
+if [ -f /usr/share/gnome-shell/extensions/blur-my-shell@aunetx/src/extension.js ]; then
+  mv /usr/share/gnome-shell/extensions/blur-my-shell@aunetx/src/extension.js /usr/share/gnome-shell/extensions/blur-my-shell@aunetx/
+fi
+
 # Logo Menu setup
 # xdg-terminal-exec is required for this extension
 install -Dpm0755 -t /usr/bin /usr/share/gnome-shell/extensions/logomenu@aryan_k/distroshelf-helper
